@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulta Chamados Manserv</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="chatbot-container">
+        <div class="chat-header">
+            <h2>Consulta Chamados Manserv</h2>
+            <p>Utilize o nº de OS do SAP</p>
+            <button id="theme-toggle-btn" title="Alternar tema">
+                <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.55 4.95l1.414-1.414L7.05 5.636 5.636 7.05 3.55 4.95zm15.492 15.492l1.414-1.414L18.364 17l-1.414 1.414 2.002 2.03zM1 11h3v2H1v-2zm19 0h3v2h-3v-2zM4.95 20.45l-1.414-1.414L5.636 17l1.414 1.414-2.102 2.036zM17 5.636L18.364 4.22l1.414 1.414-1.414 1.414L17 5.636z"/></svg>
+                <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><path d="M11.38 2.019a7.5 7.5 0 1 0 10.6 10.6C22.562 17.218 19.5 22 12 22 4.5 22 1.438 17.218 1.99 12.618a7.5 7.5 0 0 1 9.39-10.6z"/></svg>
+            </button>
+        </div>
+        <div class="chat-output" id="chat-output">
+            </div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Digite sua mensagem...">
+            <button id="send-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"></path></svg>
+            </button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

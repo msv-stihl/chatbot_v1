@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+/* --- Estilos Gerais da Página --- */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f6f6f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background-color 0.3s;
+    background-image: url('fundo_doodle.png');
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
+#chatbot-container {
+    width: 100%;
+    max-width: 700px; 
+    height: 98vh;
+    max-height: 800px;
+    background-color: #f6f6f699;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.chat-header {
+    position: relative; /* Necessário para posicionar o botão de tema */
+    background: linear-gradient(90deg, #ff460a, #d93b08); 
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    flex-shrink: 0; 
+}
+
+/* --- ESTILOS PARA O NOVO BOTÃO DE TEMA --- */
+#theme-toggle-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#theme-toggle-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+.icon-moon {
+    display: none; /* A lua começa escondida */
+}
+/* O resto do CSS continua igual... */
+
+.chat-header h2 { margin: 0; font-size: 1.5em; }
+.chat-header p { margin: 5px 0 0; font-size: 0.9em; opacity: 0.9; }
+.chat-output { flex-grow: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; gap: 15px; }
+.message { padding: 12px 18px; border-radius: 20px; max-width: 80%; line-height: 1.5; word-wrap: break-word; }
+.bot { background-color: #f1f0f0; color: #333; align-self: flex-start; border-bottom-left-radius: 5px; }
+.user { background-color: #ff460a; color: white; align-self: flex-end; border-bottom-right-radius: 5px; }
+.chat-input { display: flex; padding: 15px; border-top: 1px solid #e0e0e0; background-color: #f9f9f9; flex-shrink: 0; }
+#user-input { flex-grow: 1; border: 1px solid #ccc; border-radius: 20px; padding: 10px 15px; font-size: 1em; outline: none; transition: border-color 0.3s; }
+#user-input:focus { border-color: #ff460a; }
+#send-btn { background-color: #ff460a; color: white; border: none; border-radius: 50%; width: 45px; height: 45px; margin-left: 10px; cursor: pointer; display: flex; justify-content: center; align-items: center; transition: background-color 0.3s; flex-shrink: 0; }
+#send-btn:hover { background-color: #d93b08; }
+
+
+/* --- ESTILOS DO TEMA ESCURO (DARK THEME) --- */
+/* Estas regras só se aplicam quando o <body> tem a classe 'dark-theme' */
+
+body.dark-theme {
+    background-color: #121212; /* Fundo geral bem escuro */
+}
+body.dark-theme #chatbot-container {
+    background-color: #00000099; /* Fundo do chat escuro */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+body.dark-theme .chat-header {
+    border-bottom-color: #333;
+}
+body.dark-theme .bot {
+    background-color: #2c2f33; /* Balão do bot mais escuro */
+    color: #e0e0e0; /* Texto do bot mais claro */
+}
+body.dark-theme .chat-input {
+    background-color: #23272a;
+    border-top-color: #333;
+}
+body.dark-theme #user-input {
+    background-color: #40444b;
+    border-color: #555;
+    color: #fff; /* Texto do usuário digitando fica branco */
+}
+
+/* Lógica para trocar o ícone do botão */
+body.dark-theme .icon-sun {
+    display: none; /* Esconde o sol no tema escuro */
+}
+body.dark-theme .icon-moon {
+    display: block; /* Mostra a lua no tema escuro */
+}
+
+
+/* --- Ajustes para Celular (Responsividade) --- */
+@media (max-width: 768px) {
+    body { align-items: flex-start; }
+    #chatbot-container { width: 100%; height: 100%; max-width: 100%; max-height: 100%; border-radius: 0; box-shadow: none; }
+    .chat-header { border-radius: 0; }
+    #theme-toggle-btn { top: 12px; } /* Ajuste de posição do botão no mobile */
+}
+
+/* --- Estilo para listas dentro dos balões do bot --- */
+.message.bot ul {
+    margin-top: 8px; /* Espaço entre o título e a lista */
+    margin-bottom: 0;
+    padding-left: 20px; /* Alinha os tópicos para dentro */
+    text-align: left; /* Garante que o texto do tópico fique alinhado à esquerda */
+}
+
+.message.bot li {
+    margin-bottom: 5px; /* Espaço entre cada item da lista */
+}
