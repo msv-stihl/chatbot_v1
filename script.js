@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const userInput = document.getElementById('user-input');
     const sendBtn = document.getElementById('send-btn');
     const themeToggleBtn = document.getElementById('theme-toggle-btn');
-    const API_URL = 'http://127.0.0.1:5000/api/os/';
+    const API_URL = 'https://msv-stihl.github.io/chatbot_v1/dados.json';
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') { document.body.classList.add('dark-theme'); }
     themeToggleBtn.addEventListener('click', () => {
@@ -31,8 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
     async function fetchOSData(osNumber) {
         addMessage('Aguarde, estou buscando as informações...', 'bot');
         try {
-            const response = await fetch(API_URL + osNumber);
-            const data = await response.json();
+            const response = await fetch(API_URL);
+            const dataList = await response.json();
+            const data = dataList.find(item => item.numero_os === osNumber)
             chatOutput.removeChild(chatOutput.lastChild); 
 
             if (response.ok) {
