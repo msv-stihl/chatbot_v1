@@ -29,6 +29,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- FUNÇÃO fetchOSData ATUALIZADA ---
     async function fetchOSData(osNumber) {
+        const mapaStatus = {
+            '0': 'Aguardando avaliação',
+            '39': 'Buscando fornecedor',
+            '40': 'Aguardando compra de material',
+            '41': 'Aguardando recurso disponível',
+            '42': 'Área não liberada',
+            '43': 'Reposição de material',
+            '44': 'Programado para parada',
+            '45': 'Aguardando verba',
+            '46': 'Empresa externa',
+            '47': 'Aguardando execução',
+            '48': 'Em cotação',
+            '49': 'Aguardando entrega',
+            '50': 'Programado',
+            '55': 'Em execução',
+            '77': 'Executado',
+            '95': 'Aguardando atualização',
+            '96': 'Cancelado',
+            '97': 'Aguardando atualização',
+            '99': 'Encerrado'
+        };
+
         addMessage('Aguarde, estou buscando as informações...', 'bot');
         try {
             const response = await fetch(API_URL);
@@ -36,11 +58,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const data = dataList.find(item => item.numero_os === osNumber)
             chatOutput.removeChild(chatOutput.lastChild); 
 
+            if (!data) {
+                addMessage("❌ Não encontrei essa OS em nosso banco de dados. Verifique se digitou corretamente.", 'bot');
+                return;
+            }
+
             if (response.ok) {
                 // Mensagem 1: Detalhes da OS
                 const respostaHtml = `
                     <strong>Detalhes da OS ${data.numero_os}:</strong><br>
-                    - <strong>Status:</strong> ${data.status || 'Não informado'}<br>
+                    - <strong>Status:</strong> ${mapaStatus[data.status] || data.status || 'Não informado'}<br>
                     - <strong>Prioridade:</strong> ${data.prioridade || 'Não informada'}<br>
                     - <strong>Data Prevista:</strong> ${data.data_prevista_formatada || 'Não definida'}<br>
                     - <strong>Descrição:</strong> ${data.descricao || 'Sem descrição'}
