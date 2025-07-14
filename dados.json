@@ -103400,7 +103400,7 @@
     "numero_os":"820195069",
     "prioridade":4,
     "descricao":"INC2775162 - Mover quatro armários de dentro do ambulatório do P27 para a Manserv. Atividade já alinhada com a Vanessa, programar para segunda 14\/07\/2025. Solicitante Henrique Haas.",
-    "status":50,
+    "status":55,
     "data_prevista":1752451200000
   },
   {
@@ -103883,7 +103883,14 @@
     "numero_os":"810520336",
     "prioridade":1,
     "descricao":"INC2778616 - Disjuntor do painel desarmou no laboratório de metrologia, prédio 50. Solicitante Victor Ribolli.",
-    "status":50,
+    "status":55,
+    "data_prevista":1752451200000
+  },
+  {
+    "numero_os":"810520338",
+    "prioridade":1,
+    "descricao":"INC2777437 - O bebedouro da ferramentaria em frente ao banheiro, está sem água. BEB52.001. P52-Ferramentaria. Solicitante Fabricio Fontoura.",
+    "status":55,
     "data_prevista":1752451200000
   },
   {
