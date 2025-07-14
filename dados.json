@@ -66328,7 +66328,7 @@
     "numero_os":"820185742",
     "prioridade":3,
     "descricao":"INC2559448 - Placas do piso na sala da supervisão no prédio 16 estão descolando. P16. Solicitante Tiago de Oliveira.\n\nCASCOLA - ALMOXARIFADO MANSERV",
-    "status":50,
+    "status":55,
     "data_prevista":1752451200000
   },
   {
@@ -101930,7 +101930,7 @@
     "numero_os":"820194837",
     "prioridade":2,
     "descricao":"INC2766574 - Hydra trancada. P31-BAN066-BOX001. Solicitante Thiago Petry.\n\n1 ACAB VÁLV ANTIVANDALISMO CROM DOCOL\npedido: 4540933409",
-    "status":55,
+    "status":77,
     "data_prevista":1752105600000
   },
   {
@@ -103078,7 +103078,7 @@
     "numero_os":"820195141",
     "prioridade":4,
     "descricao":"Realizar corte de grama na área externa do estacionamento de terceiros, fotos em anexo. Solicitante Lucas Brandalise.",
-    "status":0,
+    "status":99,
     "data_prevista":1754524800000
   },
   {
@@ -103519,7 +103519,7 @@
     "numero_os":"820195330",
     "prioridade":2,
     "descricao":"Recolher galhos secos e resíduos AFAS, fotos em anexo. P20. Solicitante Gustavo Barth.",
-    "status":0,
+    "status":47,
     "data_prevista":1754697600000
   },
   {
@@ -103891,6 +103891,20 @@
     "prioridade":1,
     "descricao":"INC2777437 - O bebedouro da ferramentaria em frente ao banheiro, está sem água. BEB52.001. P52-Ferramentaria. Solicitante Fabricio Fontoura.",
     "status":55,
+    "data_prevista":1752451200000
+  },
+  {
+    "numero_os":"810520339",
+    "prioridade":1,
+    "descricao":"INC2777756 - Kit emergência rompido KTE31.006. P31-ZCR. Solicitante Rafael Brondani.",
+    "status":50,
+    "data_prevista":1752451200000
+  },
+  {
+    "numero_os":"810520521",
+    "prioridade":1,
+    "descricao":"INC2777782 - Vazamento de água no banheiro. P28-BAN053. Solicitante Maicon de Araújo.",
+    "status":50,
     "data_prevista":1752451200000
   },
   {
