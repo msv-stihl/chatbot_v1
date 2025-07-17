@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // ... (toda a parte inicial de obter elementos e lógica de tema continua a mesma)
     const chatOutput = document.getElementById('chat-output');
     const userInput = document.getElementById('user-input');
     const sendBtn = document.getElementById('send-btn');
@@ -27,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
         chatOutput.scrollTop = chatOutput.scrollHeight;
     }
 
-    // --- FUNÇÃO fetchOSData ATUALIZADA ---
     async function fetchOSData(osNumber) {
         const mapaStatus = {
             '0': 'Aguardando avaliação',
@@ -103,22 +101,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     }, 1500); 
                 }
 
-                // --- INÍCIO DA NOVA LÓGICA DO LINK DE E-MAIL ---
                 // Mensagem 4: Link para contato por e-mail
                 setTimeout(() => {
-                    // Monta o assunto do e-mail dinamicamente
                     const assuntoEmail = encodeURIComponent(`Dúvidas - OS ${data.numero_os}`);
-                    
-                    // Cria o link mailto completo
                     const linkEmail = `mailto:manserv@stihl.com.br?subject=${assuntoEmail}`;
-                    
-                    // Cria a mensagem final com o hyperlink
                     const mensagemEmail = `Caso queira tirar alguma dúvida específica dessa OS, <a href="${linkEmail}" target="_blank">clique aqui</a>.`;
-                    
-                    // Adiciona a mensagem ao chat
                     addMessage(mensagemEmail, 'bot', true);
-                }, 2200); // Delay maior para ser a última mensagem a aparecer
-                // --- FIM DA NOVA LÓGICA ---
+                }, 2200);
 
             } else {
                 addMessage(data.erro, 'bot');
@@ -130,7 +119,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // ... (o resto do arquivo script.js continua igual)
     function processMessage(message) {
         const lowerCaseMessage = message.toLowerCase();
         if (lowerCaseMessage.includes('olá') || lowerCaseMessage.includes('bom dia') || lowerCaseMessage.includes('boa tarde')) {
