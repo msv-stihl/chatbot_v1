@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
             '44': 'Programado para parada',
             '45': 'Aguardando verba',
             '46': 'Empresa externa',
-            '47': 'Aguardando execução',
+            '47': 'Aguardando programação',
             '48': 'Em cotação',
             '49': 'Aguardando entrega',
             '50': 'Programado',
